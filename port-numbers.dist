@@ -1,6 +1,6 @@
 PORT NUMBERS
 
-(last updated 2004-01-08) 
+(last updated 2004-03-17) 
 
 The port numbers are divided into three ranges: the Well Known Ports,
 the Registered Ports, and the Dynamic and/or Private Ports.
@@ -1869,7 +1869,10 @@ entrust-ash     710/udp    Entrust Administration Service Handler
 cisco-tdp       711/tcp    Cisco TDP
 cisco-tdp       711/udp    Cisco TDP
 #                          Bruce Davie <bsd@cisco.com>
-#               712-728    Unassigned
+tbrpf           712/tcp    TBRPF
+tbrpf           712/udp    TBRPF
+#                          RFC3684
+#               713-728    Unassigned
 netviewdm1      729/tcp    IBM NetView DM/6000 Server/Client
 netviewdm1      729/udp    IBM NetView DM/6000 Server/Client
 netviewdm2      730/tcp    IBM NetView DM/6000 send/tcp
@@ -2106,9 +2109,7 @@ cap             1026/udp   Calender Access Protocol
 exosee          1027/tcp   ExoSee
 exosee          1027/udp   ExoSee
 #                          Chagdali Ismail <chagdali@free.fr> June 2003
-ams             1028/tcp   AMS
-ams             1028/udp   AMS
-#                          Ronald R. Ohmer <rohmer@aisconsulting.net> October 2003
+#                   1028   Depricated February 2004
 #                   1029   Unassigned 
 iad1            1030/tcp   BBN IAD
 iad1            1030/udp   BBN IAD
@@ -2129,7 +2130,10 @@ mxxrlogin       1035/udp   MX-XR RPC
 nsstp           1036/tcp   Nebula Secure Segment Transfer Protocol
 nsstp           1036/udp   Nebula Secure Segment Transfer Protocol
 #                          Steve Ravida <steve.ravida@nebulaholdings.com>
-#               1037-1039  Unassigned
+ams             1037/tcp   AMS
+ams             1037/udp   AMS
+#                          Ronald R. Ohmer <rohmer@aisconsulting.net> October 2003 / February 2004
+#               1038-1039  Unassigned
 netarx          1040/tcp   Netarx
 netarx          1040/udp   Netarx
 #                          Fredrick Paul Eisele <phreed@netarx.com>
@@ -2363,7 +2367,13 @@ tripwire        1169/tcp   TRIPWIRE
 tripwire        1169/udp   TRIPWIRE
 #                          Ed Metcalf <emetcalf@tripwiresecurity.com>
 #                          Albert Holt <alberth@triosoftware.com>
-#               1170-1179  Unassigned
+atc-lm          1170/tcp   AT+C License Manager
+atc-lm          1170/udp   AT+C License Manager
+#                          Peter Schäfer <p.schaefer@atc-systeme.de> February 2004
+atc-appserver   1171/udp   AT+C FmiApplicationServer
+atc-appserver   1171/udp   AT+C FmiApplicationServer
+#                          Peter Schäfer <p.schaefer@atc-systeme.de> February 2004 
+#               1172-1179  Unassigned
 mc-client       1180/tcp   Millicent Client Proxy
 mc-client       1180/udp   Millicent Client Proxy
 #                          Steve Glassman <steveg@pa.dec.com>
@@ -5063,7 +5073,7 @@ iwserver        2166/udp   iwserver
 #                          Fred Surr <quest_iana@oz.quest.com>
 raw-serial      2167/tcp   Raw Async Serial Link
 raw-serial      2167/udp   Raw Async Serial Link
-#                          Benjamin Green <benjamin@lh.co.nz>
+#                          Benjamin Green <ben@lh.co.nz>
 #	        2168-2179  Unassigned
 mc-gt-srv	2180/tcp   Millicent Vendor Gateway Server
 mc-gt-srv	2180/udp   Millicent Vendor Gateway Server
@@ -6317,10 +6327,10 @@ itinternet	2691/udp   ITInternet ISM Server
 #			   Ron Ehli <ron@itinternet.net>
 admins-lms	2692/tcp   Admins LMS
 admins-lms	2692/udp   Admins LMS
-#			   Dagfinn Saether <Dagfinn@admins.com>
-belarc-http	2693/tcp   belarc-http
-belarc-http	2693/udp   belarc-http
-#			   Gary Newman <gnewman@belarc.com>
+#                      Dagfinn Saether <Dagfinn@admins.com>
+#           2693/tcp   Unassigned (Removed 2004-2-6)
+#           2693/udp   
+#			   
 pwrsevent	2694/tcp   pwrsevent	
 pwrsevent	2694/udp   pwrsevent	
 #			   Yoshinobu Nakamura
@@ -6963,12 +6973,12 @@ elvin_client	2917/udp   Elvin Client
 kastenchasepad	2918/tcp   Kasten Chase Pad
 kastenchasepad	2918/udp   Kasten Chase Pad
 #			   Marc Gauthier <mgau@kastenchase.com>
-roboer          2919/tcp   ROBOER
-roboer          2919/udp   ROBOER
-#                          Paul Snook <paul.snook@heroix.co.uk>
-roboeda         2920/tcp   ROBOEDA
-roboeda         2920/udp   ROBOEDA
-#                          Paul Snook <paul.snook@heroix.co.uk>
+roboer          2919/tcp   roboER
+roboer          2919/udp   roboER
+#                          Paul Snook <paul.snook@itheon.com>
+roboeda         2920/tcp   roboEDA
+roboeda         2920/udp   roboEDA
+#                          Paul Snook <paul.snook@itheon.com>
 cesdcdman       2921/tcp   CESD Contents Delivery Management
 cesdcdman       2921/udp   CESD Contents Delivery Management
 #                          Shinya Abe <abeabe@pfu.co.jp>
@@ -7275,7 +7285,7 @@ nds_sso         3024/udp   NDS_SSO
 #                          Mel Oyler <mel@novell.com>
 arepa-raft      3025/tcp   Arepa Raft 
 arepa-raft      3025/udp   Arepa Raft 
-#                          Mark Ellison <ellison@ieee.org>
+#                          Stuart Schaefer <sschaefer@softricity.com>
 agri-gateway    3026/tcp   AGRI Gateway
 agri-gateway    3026/udp   AGRI Gateway
 #                          Agri Datalog <contact@agri-datalog.com>
@@ -7288,7 +7298,7 @@ LiebDevMgmt_A   3029/udp   LiebDevMgmt_A
 #                          Mike Velten <Mike_Velten@Liebert.com>
 arepa-cas       3030/tcp   Arepa Cas
 arepa-cas       3030/udp   Arepa Cas
-#                          Seth Silverman <seth@arepa.com>
+#                          Stuart Schaefer <sschaefer@softricity.com>
 eppc            3031/tcp   Remote AppleEvents/PPC Toolbox
 eppc            3031/udp   Remote AppleEvents/PPC Toolbox
 #                          Steve Zellers <zellers@apple.com>
@@ -8449,7 +8459,7 @@ denali-server   3444/udp   Denali Server
 #                          Joe Devlin <Joe.Devlin@rocketsoftware.com> March 2002
 monp            3445/tcp   Media Object Network
 monp            3445/udp   Media Object Network
-#                          Ron Herardian <ron@zoogaloo.com> March 2002
+#                          Ron Herardian <rherardi@gssnet.com> March 2002
 3comfaxrpc      3446/tcp   3Com FAX RPC port
 3comfaxrpc      3446/udp   3Com FAX RPC port
 #                          Christopher Wells <christopher_wells@3com.com> April 2002
@@ -9108,7 +9118,7 @@ wininstall-ipc  3674/udp   WinINSTALL IPC Port
 #                          Bill Somerville <Bill.Somerville@OnDemandSoftware.com> January 2003
 calltrax        3675/tcp   CallTrax Data Port
 calltrax        3675/udp   CallTrax Data Port
-#                          Oliver Bailey <oliver@time-lines.com> January 2003
+#                          Oliver Bailey <zzf66jjlm@time-lines.com> January 2003
 va-pacbase      3676/tcp   VisualAge Pacbase server
 va-pacbase      3676/udp   VisualAge Pacbase server
 #                          Dominique Lelievre <dominique.lelievre@fr.ibm.com> January 2003
@@ -9469,8 +9479,36 @@ pwgpsi          3800/udp   Print Services Interface
 #               3801       Unassigned
 vhd             3802/tcp   VHD
 vhd             3802/udp   VHD
-#                          Chris Duncombe <cdunc@atpeng.com>    
-#               3803-3837  Unassigned 
+#                          Chris Duncombe <cdunc@atpeng.com>   
+soniqsync       3803/tcp   SoniqSync
+soniqsync       3803/udp   SoniqSync
+#                          Ryan Melville <ryan_melville@soniqcast.com> January 2004 
+iqnet-port      3804/tcp   Harman IQNet Port
+iqnet-port      3804/udp   Harman IQNet Port
+#                          Bruce Vander Werf <bvanderwerf@crownintl.com> February 2004
+tcpdataserver   3805/tcp   ThorGuard Server Port
+tcpdataserver   3805/udp   ThorGuard Server Port
+#                          Joel E. Steiger <jsteiger@eic-us.com> February 2004
+wsmlb           3806/tcp   Remote System Manager
+wsmlb           3806/udp   Remote System Manager
+#                          Thomas Fiege <tfiege@us.ibm.com> February 2004
+spugna          3807/tcp   SpuGNA Communication Port
+spugna          3807/udp   SpuGNA Communication Port
+#                          Samuele Sequi <samuelesequi@defcom.it> February 2004
+#               3808-3809  Unassigned
+wlanauth        3810/tcp   WLAN AS server
+wlanauth        3810/udp   WLAN AS server
+#                          Bianling Zhang <blzhang@iwncomm.com> February 2004    
+amp             3811/tcp   AMP
+amp             3811/udp   AMP
+#                          Northon Rodrigues <northon.rodrigues@thomson.net> February 2004 
+neto-wol-server 3812/tcp   netO WOL Server
+neto-wol-server 3812/udp   netO WOL Server
+#                          Martin Bestmann <martin@no.netopia.com> March 2004
+rap-ip          3813/tcp   Rhapsody Interface Protocol
+rap-ip          3813/udp   Rhapsody Interface Protocol
+#                          Paul Zander (Philips CFT) <p.j.zander@philips.com> March 2004
+#               3814-3837  Unassigned 
 sos             3838/tcp   Scito Object Server
 sos             3838/udp   Scito Object Server
 #                          Arno Klaassen <arno@ccr.jussieu.fr> November 2003 
@@ -10351,9 +10389,9 @@ targus-getdata3 5203/tcp   TARGUS GetData 3
 targus-getdata3 5203/udp   TARGUS GetData 3
 #                          John Keaveney <johnkeaveney@targusinfo.com>
 #               5204-5221  Unassigned
-jabber-client   5222/tcp   Jabber Client Connection
-jabber-client   5222/udp   Jabber Client Connection
-#                          David Waite <mass@akuma.org> February 2002 
+xmpp-client     5222/tcp   XMPP Client Connection
+xmpp-client     5222/udp   XMPP Client Connection
+#                          Peter Saint-Andre <stpeter@jabber.org> February 2002 
 #               5223-5224  Unassigned
 hp-server       5225/tcp   HP Server
 hp-server       5225/udp   HP Server
@@ -10374,9 +10412,9 @@ igateway        5250/udp   iGateway
 3com-njack-2    5265/udp   3Com Network Jack Port 2
 #                          Abhay Rajaram <Abhay_Rajaram@3Com.com> March 2003
 #               5266-5268  Unassigned
-jabber-server   5269/tcp   Jabber Server Connection
-jabber-server   5269/udp   Jabber Server Connection
-#                          David Waite <mass@akuma.org> February 2002
+xmpp-server     5269/tcp   XMPP Server Connection
+xmpp-server     5269/udp   XMPP Server Connection
+#                          Peter Saint-Andre <stpeter@jabber.org> February 2002
 #               5270-5271  Unassigned
 pk              5272/tcp   PK
 pk              5272/udp   PK
@@ -10429,7 +10467,10 @@ hacl-poll       5315/udp   HA Cluster UDP Polling
 mdns            5353/tcp   Multicast DNS
 mdns            5353/udp   Multicast DNS
 #                          Stuart Cheshire <cheshire@multicastdns.org>
-#     		5354-5399  Unassigned
+rmx             5354/tcp   Rendezvous Message Exchange
+rmx             5354/udp   Rendezvous Message Exchange
+#                          Bob Bradley <bradley@apple.com> January 2004
+#     		    5355-5399  Unassigned
 excerpt		    5400/tcp   Excerpt Search
 excerpt		    5400/udp   Excerpt Search
 excerpts	    5401/tcp   Excerpt Search Secure
@@ -11135,7 +11176,9 @@ telops-lmd      7491/tcp    telops-lmd
 telops-lmd      7491/udp    telops-lmd
 #                           David Spencer <dspencer@telops.com>
 #               7492-7499   Unassigned
-#               7500        Unassigned       
+silhouette      7500/tcp    Silhouette User
+silhouette      7500/udp    Silhouette User
+#                           Anthony Payne <opayne@pacbell.net> February 2004    
 ovbus           7501/tcp    HP OpenView Bus Daemon
 ovbus           7501/udp    HP OpenView Bus Daemon
 #                           David M. Rhodes <davidrho@cnd.hp.com>
@@ -11524,7 +11567,10 @@ bacula-fd       9102/udp    Bacula File Daemon
 bacula-sd       9103/tcp    Bacula Storage Daemon
 bacula-sd       9103/udp    Bacula Storage Daemon
 #                           Kern Sibbald <kern@sibbald.com>  January 2002
-#               9104-9159   Unassigned
+peerwire        9104/tcp    PeerWire
+peerwire        9104/udp    PeerWire
+#                           Steven Gerhardt <sgerhardt@ixiononline.com> February 2004
+#               9105-9159   Unassigned
 netlock1	    9160/tcp    NetLOCK1
 netlock1	    9160/udp    NetLOCK1
 netlock2	    9161/tcp    NetLOCK2
@@ -11954,31 +12000,35 @@ netserialext3	16367/udp  netserialext3
 netserialext4	16368/tcp  netserialext4
 netserialext4   16368/udp  netserialext4
 #                          Mike Hoy <mhoy@aquilagroup.com>
-#               16369-16990 Unassigned
+#               16369-16383 Unassigned
+connected       16384/tcp  Connected Corp
+connected       16384/udp  Connected Corp
+#                          Nicole C. Ouellette <nouellette@connected.com> February 2004
+#               16385-16990 Unassigned
 intel-rci-mp    16991/tcp  INTEL-RCI-MP
 intel-rci-mp    16991/udp  INTEL-RCI-MP
 #                          Jane Dashevsky <jane.dashevsky@intel.com> 
 #               16992-17006 Unassigned
-isode-dua	17007/tcp
-isode-dua	17007/udp
+isode-dua       17007/tcp
+isode-dua       17007/udp
 #               17008-17184 Unassigned
 soundsvirtual   17185/tcp  Sounds Virtual
 soundsvirtual   17185/udp  Sounds Virtual
 #                          Richard Snider <rsnider@sounds.com>   
 #               17186-17218 Unassigned
-chipper		17219/tcp  Chipper
-chipper		17219/udp  Chipper
-#			   Ronald Jimmink <Ronald.Jimmink@chipper.nl>
+chipper         17219/tcp  Chipper
+chipper         17219/udp  Chipper
+#                          Ronald Jimmink <Ronald.Jimmink@chipper.nl>
 #               17220-17999 Unassigned
 biimenu         18000/tcp  Beckman Instruments, Inc.
 biimenu         18000/udp  Beckman Instruments, Inc.
-#                    R. L. Meyering <RLMEYERING@BIIVAX.DP.BECKMAN.COM>
+#                          R. L. Meyering <RLMEYERING@BIIVAX.DP.BECKMAN.COM>
 #               18001-18180 Unassigned
-opsec-cvp	18181/tcp  OPSEC CVP 
-opsec-cvp	18181/udp  OPSEC CVP 
-opsec-ufp	18182/tcp  OPSEC UFP
-opsec-ufp	18182/udp  OPSEC UFP
-#			   Alon Kantor <alonk@checkpoint.com>
+opsec-cvp       18181/tcp  OPSEC CVP 
+opsec-cvp       18181/udp  OPSEC CVP 
+opsec-ufp       18182/tcp  OPSEC UFP
+opsec-ufp       18182/udp  OPSEC UFP
+#                          Alon Kantor <alonk@checkpoint.com>
 opsec-sam       18183/tcp  OPSEC SAM
 opsec-sam       18183/udp  OPSEC SAM
 opsec-lea       18184/tcp  OPSEC LEA
@@ -11997,9 +12047,9 @@ checkpoint-rtm  18241/tcp  Check Point RTM
 checkpoint-rtm  18241/udp  Check Point RTM
 #                          Dudi Hazan <dudi@checkpoint.com>
 #               18242-18462 Unassigned
-ac-cluster	18463/tcp  AC Cluster
-ac-cluster	18463/udp  AC Cluster
-#			   Lisa Zhong <lzhong@cup.hp.com>
+ac-cluster      18463/tcp  AC Cluster
+ac-cluster      18463/udp  AC Cluster
+#                          Lisa Zhong <lzhong@cup.hp.com>
 #               18464-18768 Unassigned
 ique            18769/tcp  IQue Protocol
 ique            18769/udp  IQue Protocol
@@ -12048,7 +12098,10 @@ jcp             19541/udp  JCP Client
 dnp             20000/tcp  DNP
 dnp             20000/udp  DNP
 #                          Michael Thesing <michael.thesing@acsatlanta.com>
-#               20001-20033 Unassinged
+microsan        20001/tcp  MicroSAN
+microsan        20001/udp  MicroSAN
+#                          Thomas E. Ludwig <tom.ludwig@zetera.com> February 2004
+#               20002-20033 Unassinged
 nburn_id        20034/tcp  NetBurner ID Port
 nburn_id        20034/udp  NetBurner ID Port
 #                          Paul Breed <paul@netburner.com> November 2003
@@ -12280,7 +12333,14 @@ traceroute      33434/udp   traceroute use
 turbonote-2     34249/tcp   TurboNote Relay Server Default Port
 turbonote-2     34249/udp   TurboNote Relay Server Default Port
 #                           Peter Hyde <peter@spis.co.nz>
-#               34250-34979 Unassigned
+#               34250-34377 Unassigned
+p-net-local     34378/tcp   P-Net on IP local 
+p-net-local     34378/udp   P-Net on IP local
+#                           Kurt Nissen <kn@proces-data.com> February 2004
+p-net-remote    34379/tcp   P-Net on IP remote
+p-net-remote    34379/udp   P-Net on IP remote
+#                           Kurt Nissen <kn@proces-data.com> February 2004
+#               34380-34979 Unassigned
 ethercat        34980/tcp   EtherCAT Port
 ethercat        34980/udp   EhterCAT Port
 #                           Martin Rostan <m.rostan@beckhoff.com> November 2003

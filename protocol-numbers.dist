@@ -1,7 +1,7 @@
 
 PROTOCOL NUMBERS
 
-(last updated 2003-11-03)
+(last updated 2004-01-29)
 
 In the Internet Protocol version 4 (IPv4) [RFC791] there is a field,
 called "Protocol", to identify the next level protocol.  This is an 8
@@ -119,13 +119,13 @@ Decimal    Keyword     Protocol                         References
    102     PNNI        PNNI over IP                       [Callon]
    103     PIM         Protocol Independent Multicast  [Farinacci]
    104     ARIS        ARIS                              [Feldman]
-   105     SCPS	       SCPS				   [Durst]
-   106 	   QNX	       QNX				  [Hunter]
+   105     SCPS	       SCPS                                [Durst]
+   106 	   QNX	       QNX                                [Hunter]
    107	   A/N	       Active Networks                    [Braden]
    108	   IPComp      IP Payload Compression Protocol   [RFC2393]
    109	   SNP	       Sitara Networks Protocol          [Sridhar]
    110	   Compaq-Peer Compaq Peer Protocol                [Volpe]
-   111	   IPX-in-IP   IPX in IP		  	     [Lee]
+   111	   IPX-in-IP   IPX in IP                             [Lee]
    112     VRRP	       Virtual Router Redundancy Protocol [Hinden]
    113     PGM         PGM Reliable Transport Protocol  [Speakman]
    114                 any 0-hop protocol                   [IANA]
@@ -134,23 +134,25 @@ Decimal    Keyword     Protocol                         References
    117	   IATP      Interactive Agent Transfer Protocol  [Murphy]
    118     STP         Schedule Transfer Protocol            [JMP]
    119     SRP	       SpectraLink Radio Protocol       [Hamilton]	
-   120     UTI	       UTI				[Lothberg]	
-   121     SMP	       Simple Message Protocol            [Ekblad]
-   122	   SM		SM			       [Crowcroft]
-   123	   PTP         Performance Transparency Protocol   [Welzl]
-   124     ISIS over IPv4			      [Przygienda]
-   125     FIRE					       [Partridge]
-   126	   CRTP		Combat Radio Transport Protocol  [Sautter]
-   127	   CRUDP	Combat Radio User Datagram	 [Sautter]
-   128     SSCOPMCE					   [Waber]
-   129     IPLT						[Hollbach]
-   130     SPS         Secure Packet Shield             [McIntosh] 
+   120     UTI      UTI                                 [Lothberg]	
+   121     SMP      Simple Message Protocol               [Ekblad]
+   122	   SM       SM                                 [Crowcroft]
+   123	   PTP      Performance Transparency Protocol      [Welzl]
+   124     ISIS over IPv4                             [Przygienda]
+   125     FIRE                                        [Partridge]
+   126	   CRTP     Combat Radio Transport Protocol      [Sautter]
+   127	   CRUDP    Combat Radio User Datagram           [Sautter]
+   128     SSCOPMCE                                        [Waber]
+   129     IPLT                                         [Hollbach]
+   130     SPS    Secure Packet Shield                  [McIntosh] 
    131     PIPE   Private IP Encapsulation within IP       [Petri]
    132     SCTP   Stream Control Transmission Protocol   [Stewart]
    133     FC     Fibre Channel                        [Rajagopal]
    134     RSVP-E2E-IGNORE                               [RFC3175]
    135     Mobility Header                               [RFC-ietf-mobileip-ipv6-24.txt]
-   136-254             Unassigned                           [IANA]
+   136-252             Unassigned                           [IANA]
+   253     Use for experimentation and testing           [RFC3692] 
+   254     Use for experimentation and testing           [RFC3692] 
    255                 Reserved                             [IANA]
 
 
@@ -295,6 +297,9 @@ REFERENCES
 [RFC-ietf-mobileip-ipv6-24.txt] 
           D. Johnson, C. Perkins, and J. Arkko, "Mobility Support in IPv6",
           RFC XXXX, Month Year.
+
+[RFC3692] T. Narten, "Assigning Experimental and Testing Numbers Considered 
+          Useful", RFC 3692, January 2004.
 
 PEOPLE
 ------
