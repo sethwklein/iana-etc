@@ -31,7 +31,7 @@ PORT ALIASES
 	getaddrinfo: Servname not supported for ai_socktype
 
     Some useful things for finding out what alias is needed:
-     o strace <http://www.wi.leidenuniv.nl/~wichert/strace/>
+     o strace from <http://www.wi.leidenuniv.nl/~wichert/strace/>
      o grep -r 'getaddrinfo' in the appropriate source tree
 
     The various RFCs and such usually list the number for an alias but it may
@@ -61,8 +61,8 @@ DEPENDENCIES
 
 INSTALLATION
 
-    Installation is flexible and friendly to unattended installation even
-    though, due to its simplicity, it does not use GNU Autoconf.
+    The installation process is flexible and friendly to unattended install-
+    ation even though, due to its simplicity, it does not use Autoconf.
 
     For basic installation run:
 
