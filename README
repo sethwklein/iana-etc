@@ -28,8 +28,8 @@ PORT ALIASES
 	getaddrinfo: Servname not supported for ai_socktype
 
     Some useful things for finding out what alias is needed:
-     o strace from <http://www.wi.leidenuniv.nl/~wichert/strace/>
-     o grep -r 'getaddrinfo' in the appropriate source tree
+      * strace from <http://www.wi.leidenuniv.nl/~wichert/strace/>
+      * grep -r 'getaddrinfo' in the appropriate source tree
 
     The various RFCs and such usually list the number for an alias but it may
     be faster to just check the FreeBSD services file at
@@ -41,8 +41,8 @@ DEPENDENCIES
 
     GNU Awk 3.1.0 or Later
 	Numerous GNU Awk extensions are used.  Awk was chosen over Perl for
-	its smaller size and more flexible installation process which are
-	important in a bootstrap environment.
+	its smaller size and more flexible installation process both of which
+	are important in a bootstrap environment.
 
 	Version 3.1.0 or later is required for support of the third argument
 	to match().  The workaround to support older versions would be less
