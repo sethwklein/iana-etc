@@ -1,7 +1,7 @@
 
 PROTOCOL NUMBERS
 
-(last updated 2004-01-29)
+(last updated 5 August 2004)
 
 In the Internet Protocol version 4 (IPv4) [RFC791] there is a field,
 called "Protocol", to identify the next level protocol.  This is an 8
@@ -63,8 +63,8 @@ Decimal    Keyword     Protocol                         References
     47     GRE         General Routing Encapsulation     [Tony Li]
     48     MHRP        Mobile Host Routing Protocol[David Johnson]
     49     BNA         BNA                          [Gary Salamon]
-    50     ESP         Encap Security Payload for IPv6   [RFC2406]
-    51     AH          Authentication Header for IPv6    [RFC2402]
+    50     ESP         Encap Security Payload            [RFC2406]
+    51     AH          Authentication Header             [RFC2402]
     52     I-NLSP      Integrated Net Layer Security  TUBA [GLENN]
     53     SWIPE       IP with Encryption                    [JI6]
     54     NARP        NBMA Address Resolution Protocol  [RFC1735]
@@ -126,7 +126,7 @@ Decimal    Keyword     Protocol                         References
    109	   SNP	       Sitara Networks Protocol          [Sridhar]
    110	   Compaq-Peer Compaq Peer Protocol                [Volpe]
    111	   IPX-in-IP   IPX in IP                             [Lee]
-   112     VRRP	       Virtual Router Redundancy Protocol [Hinden]
+   112     VRRP	      Virtual Router Redundancy Protocol [RFC3768]
    113     PGM         PGM Reliable Transport Protocol  [Speakman]
    114                 any 0-hop protocol                   [IANA]
    115	   L2TP        Layer Two Tunneling Protocol        [Aboba]
@@ -149,8 +149,9 @@ Decimal    Keyword     Protocol                         References
    132     SCTP   Stream Control Transmission Protocol   [Stewart]
    133     FC     Fibre Channel                        [Rajagopal]
    134     RSVP-E2E-IGNORE                               [RFC3175]
-   135     Mobility Header                               [RFC-ietf-mobileip-ipv6-24.txt]
-   136-252             Unassigned                           [IANA]
+   135     Mobility Header                               [RFC3775]
+   136     UDPLite                                       [RFC3828]
+   137-252 Unassigned                                       [IANA]
    253     Use for experimentation and testing           [RFC3692] 
    254     Use for experimentation and testing           [RFC3692] 
    255                 Reserved                             [IANA]
@@ -294,12 +295,18 @@ REFERENCES
 [RFC3378] R. Housley and S. Hollenbeck, "EtherIP: Tunneling Ethernet 
           Frames in IP Datagrams", RFC 3378, September 2002.
 
-[RFC-ietf-mobileip-ipv6-24.txt] 
-          D. Johnson, C. Perkins, and J. Arkko, "Mobility Support in IPv6",
-          RFC XXXX, Month Year.
-
 [RFC3692] T. Narten, "Assigning Experimental and Testing Numbers Considered 
           Useful", RFC 3692, January 2004.
+
+[RFC3768] R. Hinden, Ed., "Virtual Router Redundancy Protocol (VRRP)",
+          RFC 3768, April 2004.
+
+[RFC3775]  D. Johnson, C. Perkins, and J. Arkko, "Mobility Support in IPv6",
+           RFC 3775, June 2004.
+
+[RFC3828]  L-A. Larzon, M. Degermark, S. Pink, L-E. Jonsson Ed., and 
+           G. Fairhurst, Ed., "The UDP-Lite Protocol", RFC 3828, July 2004.
+
 
 PEOPLE
 ------

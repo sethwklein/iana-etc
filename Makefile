@@ -8,6 +8,8 @@
 PREFIX=
 ETC_DIR=etc
 
+AWK=gawk
+
 .PHONY: all files get install clean dist \
     protocol-numbers.iana port-numbers.iana
 
@@ -17,6 +19,7 @@ files: protocols services
 get: protocol-numbers.iana port-numbers.iana
 
 install: files
+	install -d ${PREFIX}/${ETC_DIR}
 	install -m 644 protocols ${PREFIX}/${ETC_DIR}
 	install -m 644 services ${PREFIX}/${ETC_DIR}
 
@@ -27,11 +30,11 @@ clean:
 	    protocol-numbers.iana port-numbers.iana
 
 protocol-numbers.iana:
-	gawk -f get.gawk -v file=protocol-numbers >protocol-numbers.iana
+	$(AWK) -f get.gawk -v file=protocol-numbers >protocol-numbers.iana
 	rm -f protocol-numbers
 
 port-numbers.iana:
-	gawk -f get.gawk -v file=port-numbers >port-numbers.iana
+	$(AWK) -f get.gawk -v file=port-numbers >port-numbers.iana
 	rm -f port-numbers
 
 protocol-numbers:
@@ -49,10 +52,10 @@ else
 endif
 
 protocols: protocol-numbers
-	gawk --re-interval -f protocols.gawk protocol-numbers > protocols
+	$(AWK) --re-interval -f protocols.gawk protocol-numbers > protocols
 
 services: port-numbers
-	gawk -f services.gawk port-numbers > services
+	$(AWK) -f services.gawk port-numbers > services
 
 dist: clean
 	rm -vrf ../iana-etc-`cat VERSION`

@@ -17,9 +17,6 @@ ABOUT
 
     Bug reports and patches are welcome.
 
-    Thanks go to the Linux From Scratch users whose scripts and bug reports
-    against the, now obsolete, LFS HINT served as inspiration and assistance.
-
 PORT ALIASES
 
     Please report any additional port aliases that you need. The port-aliases
@@ -42,14 +39,17 @@ PORT ALIASES
 
 DEPENDENCIES
 
-    GNU Awk
+    GNU Awk 3.1.0 or Later
 	Numerous GNU Awk extensions are used.  Awk was chosen over Perl for
 	its smaller size and more flexible installation process which are
 	important in a bootstrap environment.
 
-	For mawk compatibility, services.gawk and protocols.gawk might be
-	ported which would allow installation with mawk only.  If you do this,
-	please send patches.
+	Version 3.1.0 or later is required for support of the third argument
+	to match().  The workaround to support older versions would be less
+	readable and slower so I'd rather not include it without good reason.
+
+	Like GNU Awk before 3.1.0, Mawk doesn't support three argument match().
+	It also doesn't support network extensions.
 
 	Using GNU Bash for network fetching and sh/sed for filtering might
 	achieve greater portability. If you're interested, feel free to contact
@@ -94,4 +94,5 @@ DOCUMENTATION
     Man pages are provided by the man-pages package. See
     http://ftp.kernel.org/pub/linux/docs/manpages/ and
     http://freshmeat.net/projects/man-pages/
+
 
