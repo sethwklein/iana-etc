@@ -6,10 +6,12 @@ inspired the, now obsolete, LFS HINT and who reported bugs against that HINT.
 
 Thanks also go to the following people who have reported bugs in iana-etc.
 
+Pascal S. de Kloe <pascal@quies.net>
+    Reminded me that command options must come first on many non-GNU systems.
 Paul Jarc <prj@po.cwru.edu>
     Reported that install target doesn't create installation directory.
 Jochen Striepe <jochen@tolot.escape.de>
     Reported that GNU Awk 3.1.0 or greater is required.
 Steve Westerbeck <stevow@charter.net>
-    Reported that website wasn't correctly updated for 1.00.
+    Reported that the website wasn't correctly updated for 1.00.
 

@@ -39,16 +39,16 @@ port-numbers.iana:
 
 protocol-numbers:
 ifeq (protocol-numbers.iana, $(wildcard protocol-numbers.iana))
-	ln -s protocol-numbers.iana -f protocol-numbers
+	ln -f -s protocol-numbers.iana protocol-numbers
 else
-	ln -s protocol-numbers.dist -f protocol-numbers
+	ln -f -s protocol-numbers.dist protocol-numbers
 endif
 
 port-numbers:
 ifeq (port-numbers.iana, $(wildcard port-numbers.iana))
-	ln -s port-numbers.iana -f port-numbers
+	ln -f -s port-numbers.iana port-numbers
 else
-	ln -s port-numbers.dist -f port-numbers
+	ln -f -s port-numbers.dist port-numbers
 endif
 
 protocols: protocol-numbers

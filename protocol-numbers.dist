@@ -1,7 +1,7 @@
 
 PROTOCOL NUMBERS
 
-(last updated 5 August 2004)
+(last updated 18 October 2004)
 
 In the Internet Protocol version 4 (IPv4) [RFC791] there is a field,
 called "Protocol", to identify the next level protocol.  This is an 8
@@ -151,7 +151,8 @@ Decimal    Keyword     Protocol                         References
    134     RSVP-E2E-IGNORE                               [RFC3175]
    135     Mobility Header                               [RFC3775]
    136     UDPLite                                       [RFC3828]
-   137-252 Unassigned                                       [IANA]
+   137     MPLS-in-IP                                    [RFC-ietf-mpls-in-ip-or-gre-08.txt]
+   138-252 Unassigned                                       [IANA]
    253     Use for experimentation and testing           [RFC3692] 
    254     Use for experimentation and testing           [RFC3692] 
    255                 Reserved                             [IANA]
@@ -307,6 +308,9 @@ REFERENCES
 [RFC3828]  L-A. Larzon, M. Degermark, S. Pink, L-E. Jonsson Ed., and 
            G. Fairhurst, Ed., "The UDP-Lite Protocol", RFC 3828, July 2004.
 
+[RFC-ietf-mpls-in-ip-or-gre-08.txt]
+           T. Worster, Y. Rekhter, and E. Rosen, Ed., "Encapsulating MPLS in 
+           IP or Generic Routing Encapsulation (GRE)", RFC XXXX, Month Year.
 
 PEOPLE
 ------
