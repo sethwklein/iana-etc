@@ -1,7 +1,7 @@
 # Copyright (c) 2003, 2004 Seth W. Klein <sk@sethwklein.net>
-# Licensed under the Open Software License version 1.1
+# Licensed under the Open Software License version 2.1
 # See the file COPYING in the distribution tarball or
-# http://www.opensource.org/licenses/osl-1.1.txt
+# http://www.opensource.org/licenses/osl-2.1.txt
 
 BEGIN {
     print "# See also: protocols(5)" \

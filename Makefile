@@ -1,12 +1,13 @@
-# Copyright (c) 2003, 2004 Seth W. Klein <sk@sethwklein.net>
-# Licensed under the Open Software License version 1.1
+# Copyright (c) 2003-2005 Seth W. Klein <sk@sethwklein.net>
+# Licensed under the Open Software License version 2.1
 # See the file COPYING in the distribution tarball or
-# http://www.opensource.org/licenses/osl-1.1.txt
+# http://www.opensource.org/licenses/osl-2.1.txt
 
 # Makefile: See README for usage
 
+DESTDIR=
 PREFIX=
-ETC_DIR=etc
+ETC_DIR=/etc
 
 AWK=gawk
 
@@ -19,9 +20,9 @@ files: protocols services
 get: protocol-numbers.iana port-numbers.iana
 
 install: files
-	install -d ${PREFIX}/${ETC_DIR}
-	install -m 644 protocols ${PREFIX}/${ETC_DIR}
-	install -m 644 services ${PREFIX}/${ETC_DIR}
+	install -d $(DESTDIR)$(PREFIX)$(ETC_DIR)
+	install -m 644 protocols $(DESTDIR)$(PREFIX)$(ETC_DIR)
+	install -m 644 services $(DESTDIR)$(PREFIX)$(ETC_DIR)
 
 clean:
 	rm -vf \

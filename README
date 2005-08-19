@@ -73,14 +73,20 @@ INSTALLATION
     This creates /etc/services and /etc/protocols without using internet
     access.
 
-    To install in a different location, use something like:
+    To install to a temporary location as package managers often do, use
+    DESTDIR like this:
 
-	make PREFIX=/mnt/tmp install
+	make DESTDIR=/mnt/tmp install
 
-    This would create /mnt/tmp/etc/services and /mnt/tmp/etc/protocols.
+    This will create /mnt/tmp/etc/services and /mnt/tmp/etc/protocols.
 
-    For unusual installations, "make PREFIX=/foo ETC_DIR=bar install" will
-    create /foo/bar/services and /foo/bar/protocols.
+    PREFIX is also supported but currently does the same thing as DESTDIR.
+
+    For unusual installations,
+
+	make DESTDIR=/tmp PREFIX=/foo ETC_DIR=/bar install
+
+    will create /tmp/foo/bar/services and /tmp/foo/bar/protocols.
 
 GETTING FRESH DATA
 
