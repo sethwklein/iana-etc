@@ -1,4 +1,4 @@
-# Copyright (c) 2003-2005 Seth W. Klein <sk@sethwklein.net>
+# Copyright (c) 2003-2006, Seth W. Klein <sk@sethwklein.net>
 # Licensed under the Open Software License version 2.1
 # See the file COPYING in the distribution tarball or
 # http://www.opensource.org/licenses/osl-2.1.txt
@@ -18,6 +18,14 @@ all: files
 files: protocols services
 
 get: protocol-numbers.iana port-numbers.iana
+
+test: test-protocols test-services
+
+test-services: services
+	$(AWK) --re-interval -f test-lib.gawk -f services-test.gawk <services
+
+test-protocols: protocols
+	$(AWK) -f test-lib.gawk -f protocols-test.gawk <protocols
 
 install: files
 	install -d $(DESTDIR)$(PREFIX)$(ETC_DIR)

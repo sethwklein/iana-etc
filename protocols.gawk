@@ -1,4 +1,7 @@
-# Copyright (c) 2003, 2004 Seth W. Klein <sk@sethwklein.net>
+#!/usr/bin/gawk --re-interval -f
+# the above doesn't work (stupid kernel) but serves as documentation
+
+# Copyright (c) 2003-2004, 2006 Seth W. Klein <sk@sethwklein.net>
 # Licensed under the Open Software License version 2.1
 # See the file COPYING in the distribution tarball or
 # http://www.opensource.org/licenses/osl-2.1.txt

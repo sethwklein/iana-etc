@@ -51,10 +51,6 @@ DEPENDENCIES
 	Like GNU Awk before 3.1.0, Mawk doesn't support three argument match().
 	It also doesn't support network extensions.
 
-	Using GNU Bash for network fetching and sh/sed for filtering might
-	achieve greater portability. If you're interested, feel free to contact
-	the maintainer.
-
     Make
 	Testing is only done with GNU Make but incompatibilities with other
 	make implementations are probably bugs. Please send patches.
@@ -90,10 +86,17 @@ INSTALLATION
 
 GETTING FRESH DATA
 
-    If you fetch the latest data from the IANA, make sure to check the files
-    produced from it for breakage.  There is little to be gained from the
-    latest data unless you're using experimental applications, but if you
-    really want it, "make get" fetches it.
+    To fetch the latest data from the IANA run:
+
+	make get
+	make
+	make test
+
+    Beware that while test checks for invalid lines in the output files, it
+    cannot check for applications that might be broken by changes made by
+    the IANA.  In addition, there is generally little of interest in the
+    IANA's changes unless you're trying to pick a port for new development
+    in which case you're better off consulting the unfiltered files.
 
 DOCUMENTATION
 

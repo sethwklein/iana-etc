@@ -1,7 +1,7 @@
 
 PROTOCOL NUMBERS
 
-(last updated 18 October 2004)
+(last updated 28 March 2006)
 
 In the Internet Protocol version 4 (IPv4) [RFC791] there is a field,
 called "Protocol", to identify the next level protocol.  This is an 8
@@ -46,7 +46,7 @@ Decimal    Keyword     Protocol                         References
     30     NETBLT      Bulk Data Transfer Protocol    [RFC969,DDC1]
     31     MFE-NSP     MFE Network Services Protocol  [MFENET,BCH2]
     32     MERIT-INP   MERIT Internodal Protocol             [HWB]
-    33     SEP         Sequential Exchange Protocol        [JC120]
+    33     DCCP        Datagram Congestion Control Protocol  [RFC-ietf-dccp-spec-11.txt]
     34     3PC         Third Party Connect Protocol         [SAF3]
     35     IDPR        Inter-Domain Policy Routing Protocol [MXS1] 
     36     XTP         XTP                                   [GXC]
@@ -151,7 +151,7 @@ Decimal    Keyword     Protocol                         References
    134     RSVP-E2E-IGNORE                               [RFC3175]
    135     Mobility Header                               [RFC3775]
    136     UDPLite                                       [RFC3828]
-   137     MPLS-in-IP                                    [RFC-ietf-mpls-in-ip-or-gre-08.txt]
+   137     MPLS-in-IP                                    [RFC4023]
    138-252 Unassigned                                       [IANA]
    253     Use for experimentation and testing           [RFC3692] 
    254     Use for experimentation and testing           [RFC3692] 
@@ -308,9 +308,12 @@ REFERENCES
 [RFC3828]  L-A. Larzon, M. Degermark, S. Pink, L-E. Jonsson Ed., and 
            G. Fairhurst, Ed., "The UDP-Lite Protocol", RFC 3828, July 2004.
 
-[RFC-ietf-mpls-in-ip-or-gre-08.txt]
-           T. Worster, Y. Rekhter, and E. Rosen, Ed., "Encapsulating MPLS in 
-           IP or Generic Routing Encapsulation (GRE)", RFC XXXX, Month Year.
+[RFC4023]  T. Worster, Y. Rekhter, and E. Rosen, Ed., "Encapsulating MPLS in 
+           IP or Generic Routing Encapsulation (GRE)", RFC 4023, March 2005.
+
+[RFC-ietf-dccp-spec-11.txt]
+           E. Kohler, M. Handley and S. Floyd, "Datagram Congestion 
+           Control Protocol (DCCP)", RFC XXXX, Month Year.
 
 PEOPLE
 ------
@@ -435,7 +438,7 @@ PEOPLE
 
 [Perkins] Charlie Perkins <perk@watson.ibm.com>, October 1994.
 
-[Petri] Bernhard Petri <bernhard.petri@icn.siemens.de>, March 2000
+[Petri] Bernhard Petri <bernhard.petri@siemens.com>, March 2000.
 
 [Presotto] Dave Presotto  <presotto@plan9.att.com>, July 1995.
 
