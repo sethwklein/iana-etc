@@ -1,7 +1,7 @@
 # Copyright (c) 2003-2006, Seth W. Klein <sk@sethwklein.net>
-# Licensed under the Open Software License version 2.1
+# Licensed under the Open Software License version 3.0
 # See the file COPYING in the distribution tarball or
-# http://www.opensource.org/licenses/osl-2.1.txt
+# http://www.opensource.org/licenses/osl-3.0.txt
 
 # Makefile: See README for usage
 
@@ -10,9 +10,12 @@ PREFIX=
 ETC_DIR=/etc
 
 AWK=gawk
+STRIP=no
+# STRIP=yes
 
-.PHONY: all files get install clean dist \
-    protocol-numbers.iana port-numbers.iana
+# sed -n 's/^\([^#:]*\):.*/\1/p' < Makefile | grep -v '^\(.PHONY\|.*-numbers.*\|protocols\|services\)$' | tr '\n' ' ' | sed 's/ $/\n/' | xclip
+.PHONY: all files get test test-services test-protocols install clean \
+	protocol-numbers.iana port-numbers.iana dist
 
 all: files
 files: protocols services
@@ -21,11 +24,11 @@ get: protocol-numbers.iana port-numbers.iana
 
 test: test-protocols test-services
 
-test-services: services
-	$(AWK) --re-interval -f test-lib.gawk -f services-test.gawk <services
+test-services: services test-lib.gawk test-services.gawk
+	$(AWK) --re-interval -f test-lib.gawk -f test-services.gawk <services
 
-test-protocols: protocols
-	$(AWK) -f test-lib.gawk -f protocols-test.gawk <protocols
+test-protocols: protocols test-lib.gawk test-protocols.gawk
+	$(AWK) -f test-lib.gawk -f test-protocols.gawk <protocols
 
 install: files
 	install -d $(DESTDIR)$(PREFIX)$(ETC_DIR)
@@ -60,11 +63,12 @@ else
 	ln -f -s port-numbers.dist port-numbers
 endif
 
-protocols: protocol-numbers
-	$(AWK) --re-interval -f protocols.gawk protocol-numbers > protocols
+protocols: protocol-numbers protocols.gawk
+	$(AWK) --re-interval -f protocols.gawk -v strip=$(STRIP) \
+	    protocol-numbers > protocols
 
-services: port-numbers
-	$(AWK) -f services.gawk port-numbers > services
+services: port-numbers services.gawk
+	$(AWK) -f services.gawk -v strip=$(STRIP) port-numbers > services
 
 dist: clean
 	rm -vrf ../iana-etc-`cat VERSION`

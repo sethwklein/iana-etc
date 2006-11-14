@@ -1,9 +1,9 @@
 #!/usr/bin/gawk -f
 
 # Copyright (c) 2003-2004, 2006 Seth W. Klein <sk@sethwklein.net>
-# Licensed under the Open Software License version 2.1
+# Licensed under the Open Software License version 3.0
 # See the file COPYING in the distribution tarball or
-# http://www.opensource.org/licenses/osl-2.1.txt
+# http://www.opensource.org/licenses/osl-3.0.txt
 
 # get.awk: retrieves IANA numbers assignments from iana.org.
 # Requires GNU Awk.

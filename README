@@ -48,12 +48,12 @@ DEPENDENCIES
 	to match().  The workaround to support older versions would be less
 	readable and slower so I'd rather not include it without good reason.
 
-	Like GNU Awk before 3.1.0, Mawk doesn't support three argument match().
-	It also doesn't support network extensions.
+	Like GNU Awk before 3.1.0, Mawk doesn't support three argument match()
+	and so is not supported.  It also doesn't support network extensions.
 
     Make
 	Testing is only done with GNU Make but incompatibilities with other
-	make implementations are probably bugs. Please send patches.
+	make implementations are bugs. Please send patches.
 
 INSTALLATION
 
@@ -68,6 +68,10 @@ INSTALLATION
 
     This creates /etc/services and /etc/protocols without using internet
     access.
+
+    To throw out the useful comments in generated files, use:
+
+	make STRIP=yes
 
     To install to a temporary location as package managers often do, use
     DESTDIR like this:
@@ -104,4 +108,9 @@ DOCUMENTATION
     http://ftp.kernel.org/pub/linux/docs/manpages/ and
     http://freshmeat.net/projects/man-pages/
 
+BUGS
+
+    The Makefile uses the .PHONY target which (according to the GNU Make
+    info page, IIRC) is not supported by other common make implementations.  
+    There are plans to fix this in a future release.
 

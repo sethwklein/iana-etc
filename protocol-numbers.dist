@@ -1,7 +1,7 @@
 
 PROTOCOL NUMBERS
 
-(last updated 28 March 2006)
+(last updated 03 October 2006)
 
 In the Internet Protocol version 4 (IPv4) [RFC791] there is a field,
 called "Protocol", to identify the next level protocol.  This is an 8
@@ -61,7 +61,7 @@ Decimal    Keyword     Protocol                         References
     45     IDRP        Inter-Domain Routing Protocol   [Sue Hares]
     46     RSVP        Reservation Protocol           [Bob Braden]
     47     GRE         General Routing Encapsulation     [Tony Li]
-    48     MHRP        Mobile Host Routing Protocol[David Johnson]
+    48     DSR         Dynamic Source Routing Protocol   [RFC-ietf-manet-dsr-10.txt]
     49     BNA         BNA                          [Gary Salamon]
     50     ESP         Encap Security Payload            [RFC2406]
     51     AH          Authentication Header             [RFC2402]
@@ -315,6 +315,10 @@ REFERENCES
            E. Kohler, M. Handley and S. Floyd, "Datagram Congestion 
            Control Protocol (DCCP)", RFC XXXX, Month Year.
 
+[RFC-ietf-manet-dsr-10.txt]
+           D.B. Johnson, D.A. Maltz and Y-C. Hu, "The Dynamic Source Routing Protocol
+           for Mobile Ad Hoc Networks (DSR)", RFC XXXX, Month Year.
+
 PEOPLE
 ------
 
@@ -328,7 +332,7 @@ PEOPLE
 
 [BN7] <mystery contact> 
 
-[Braden] Bob Braden, <braden@isi.edu>,, July 1997.
+[Braden] Bob Braden, <braden@isi.edu>, July 1997.
 
 [BWB6] Barry Boehm  <boehm@ARPA.MIL>
 
@@ -363,8 +367,6 @@ PEOPLE
 [DXF] Dirk Fromhein  <df@watershed.com>
 
 [DXM2] David Mittnacht  <---none--->
-
-[David Johnson] <mystery contact>
 
 [Ekblad] Leif Ekblad <leif.ekblad@eslov.mail.telia.com>, March 1999.
 

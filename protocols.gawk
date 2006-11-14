@@ -2,15 +2,22 @@
 # the above doesn't work (stupid kernel) but serves as documentation
 
 # Copyright (c) 2003-2004, 2006 Seth W. Klein <sk@sethwklein.net>
-# Licensed under the Open Software License version 2.1
+# Licensed under the Open Software License version 3.0
 # See the file COPYING in the distribution tarball or
-# http://www.opensource.org/licenses/osl-2.1.txt
+# http://www.opensource.org/licenses/osl-3.0.txt
 
 BEGIN {
-    print "# See also: protocols(5)" \
-	", http://www.sethwklein.net/projects/iana-etc/\n#"
-    header_printed = 0
-    format = "%-12s %3s %-12s # %s\n"
+    if (strip == "yes") {
+	strip = 1
+	format = "%s\t%s\t%s\n"
+	header_printed = 1
+    } else {
+	strip = 0
+	print "# See also: protocols(5)" \
+	    ", http://www.sethwklein.net/projects/iana-etc/\n#"
+	format = "%-12s %3s %-12s # %s\n"
+	header_printed = 0
+    }
 }
 { sub(/\r/, "") }
 match($0, /^[ \t]+([0-9]+)[ \t]{1,5}([^ \t]+)(.*)/, f) {
@@ -22,4 +29,4 @@ match($0, /^[ \t]+([0-9]+)[ \t]{1,5}([^ \t]+)(.*)/, f) {
     printf format, tolower(f[2]), f[1], f[2], f[3]
     next
 }
-{ print "# " $0 }
+!strip { print "# " $0 }
