@@ -1,6 +1,6 @@
 #!/usr/bin/gawk -f
 
-# Copyright (c) 2003-2004, 2006 Seth W. Klein <sk@sethwklein.net>
+# Copyright (c) 2003-2004, 2006, 2008 Seth W. Klein <sk@sethwklein.net>
 # Licensed under the Open Software License version 3.0
 # See the file COPYING in the distribution tarball or
 # http://www.opensource.org/licenses/osl-3.0.txt
@@ -16,8 +16,7 @@ BEGIN {
     socket = "/inet/tcp/0/" host "/80"
 
     print "Getting http://" host path file >"/dev/stderr"
-    RS="\r\n"
-    print "GET " path file " HTTP/1.0\r\nHost: " host "\r\n" |& socket
+    printf "GET %s%s HTTP/1.0\r\nHost: %s\r\n\r\n", path, file, host |& socket
     printf "Request sent, waiting for data... " >"/dev/stderr"
 
     NR = 0

@@ -12,7 +12,7 @@ Oden Eriksson <oeriksson@mandriva.com>
 Pascal S. de Kloe <pascal@quies.net>
     Reminded me that command options must come first on many non-GNU systems.
 Paul Jarc <prj@po.cwru.edu>
-    Reported that install target doesn't create installation directory.
+    Reported that the install target didn't create the installation directory.
 Jochen Striepe <jochen@tolot.escape.de>
     Reported that GNU Awk 3.1.0 or greater is required.
 Steve Westerbeck <stevow@charter.net>

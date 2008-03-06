@@ -1,6 +1,6 @@
 #!/usr/bin/gawk -f
 
-# Copyright (c) 2003-2004, 2006 Seth W. Klein <sk@sethwklein.net>
+# Copyright (c) 2003-2004, 2006, 2008 Seth W. Klein <sk@sethwklein.net>
 # Licensed under the Open Software License version 3.0
 # See the file COPYING in the distribution tarball or
 # http://www.opensource.org/licenses/osl-3.0.txt
@@ -16,41 +16,29 @@ BEGIN {
     while (getline <"port-aliases") {
 	sub(/#.*/, "")
 	if (/^[ \t]*$/) { continue }
-	alias_list[$1] = substr($0, index($0, $2))
+	#                  1:name         2:protocol     3:aliases
+	match($0, /^[ \t]*([^ \t]+)[ \t]+([^ \t]+)[ \t]+(.*)$/, f)
+	aliases[f[1] " " f[2]] = " " f[3]
     }
 }
-function aliases(n) {
-    return ((n in alias_list) ? " " alias_list[n] : "")
-}
 { sub(/\r/, "") }
-match($0, /(^[[:alnum:]][^ \t]+)([ \t]+)([0-9]+(-[0-9]+)?)(\/[^ \t]+)?(.*)/, f) {
+#           1:name               2:ws    3:port  4:range     5:proto  6:comment
+match($0, /(^[[:alnum:]][^ \t]+)([ \t]+)([0-9]+)(-[0-9]+)?\/([^ \t]+)(.*)/, f) \
+&& f[3] != "0" {
+# port 0 means unallocated, per port-numbers
     name = f[1]
     whitespace = f[2]
     port = f[3]
-    protocols[0] = f[5]
+    protocol = f[5]
     comment = f[6]
-    if (length(comment) > 0) {
-	sub(/^[ \t]*/, "&# ", comment) }
     if (strip) {
 	whitespace = "\t"
 	comment = ""
-    }
-    start = end = port + 0
-    if (match(port, /^([0-9]+)-([0-9]+)$/, n)) {
-	start = n[1]
-	end = n[2]
-    }
-    if (length(protocols[0]) == 0) {
-	protocols[0] = "/tcp"
-	protocols[1] = "/udp"
-    }
-    for (i = start; i <= end; i++) {
-	for (p in protocols) {
-	    print name whitespace i protocols[p] aliases(name) comment
-	}
-    }
+    } else if (length(comment) > 0)
+	sub(/^[ \t]*/, "&# ", comment)
+    print name whitespace port "/" protocol aliases[name " " protocol] comment
     next
 }
-# add comment marker, prettily
-!/^#/ && (sub(/^ /, "#") || sub(/^/, "# ")) {}
+# comment out, prettily
+!/^#/ { sub(/^ /, "#") || sub(/^/, "# ") }
 !strip { print }

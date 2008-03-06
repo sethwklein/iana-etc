@@ -1,4 +1,4 @@
-# Copyright (c) 2003-2006, Seth W. Klein <sk@sethwklein.net>
+# Copyright (c) 2003-2006 Seth W. Klein <sk@sethwklein.net>
 # Licensed under the Open Software License version 3.0
 # See the file COPYING in the distribution tarball or
 # http://www.opensource.org/licenses/osl-3.0.txt

@@ -69,7 +69,8 @@ INSTALLATION
     This creates /etc/services and /etc/protocols without using internet
     access.
 
-    To throw out the useful comments in generated files, use:
+    To throw out the useful comments in generated files (useful for embedded
+    installations), use:
 
 	make STRIP=yes
 
@@ -90,17 +91,21 @@ INSTALLATION
 
 GETTING FRESH DATA
 
+    This process is not advised for unattended installations.  See below.
     To fetch the latest data from the IANA run:
 
 	make get
 	make
 	make test
+	# Visually inspect protocols and services because some errors
+	# could produce a file that is valid but contains no records.
 
-    Beware that while test checks for invalid lines in the output files, it
-    cannot check for applications that might be broken by changes made by
-    the IANA.  In addition, there is generally little of interest in the
-    IANA's changes unless you're trying to pick a port for new development
-    in which case you're better off consulting the unfiltered files.
+    Beware that while test checks for invalid lines in the output files,
+    it cannot check for applications that might be broken by changes made
+    by the IANA or breakage that makes the file valid but not useful.  In
+    addition, there is generally little of interest in the IANA's changes
+    unless you're trying to pick a port for new development in which case
+    you're better off consulting the unfiltered files.
 
 DOCUMENTATION
 
